@@ -1,0 +1,32 @@
+{
+  "name": "project-node",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "keywords": [],
+  "author": "mariele",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "api-node"
+  },
+  "description": "",
+  "dependencies": {
+    
+    "@emailjs/nodejs": "^5.0.2",
+    "@prisma/client": "^6.8.2",
+    
+    
+    "body-parser": "^2.2.0",
+    "debug": "^4.4.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10",
+    "prisma": "^6.8.2"
+  }
+}
