@@ -1,14 +1,12 @@
-"use strict";
-
-const express = require("express");
-const bodyParser = require("body-parser");
+import express from "express";
+import bodyParser from "body-parser";
 const app = express();
 const router = express.Router();
 
-const index = require("./routes/index");
-const getProviders = require("./routes/provider-route");
-const products = require("./routes/products");
-const providers = require("./routes/providers");
+import index from "./routes/index.js";
+import getProviders from "./routes/provider-route.js";
+import products from "./routes/products.js";
+import providers from "./routes/providers.js";
 
 app.use(bodyParser.json());
 app.use(
@@ -22,4 +20,4 @@ app.use("/provider", providers);
 app.use("/providers", getProviders);
 app.use("/", index);
 
-module.exports = app;
+export default app;

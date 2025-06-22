@@ -1,11 +1,8 @@
-"use strict";
-
-const { PrismaClient } = require("@prisma/client");
-const { Batata } = "../utils/sendEmail";
-
+import Batata from "../utils/sendEmail.js";
+import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
-exports.post = async (req, res, next) => {
+export const postProduct = async (req, res, next) => {
   // pegando nome da requisicao
   const { name } = req.body;
   // validando se nome existe ou é valido
@@ -27,7 +24,6 @@ exports.post = async (req, res, next) => {
     });
     res.status(201).json(newProduct);
     //envio de email abaixo
-    Batata();
   } catch (err) {
     res.status(400);
     console.log(err);
@@ -36,7 +32,7 @@ exports.post = async (req, res, next) => {
   //termina a funcao
 };
 
-exports.put = async (req, res, next) => {
+export const putProduct = async (req, res, next) => {
   try {
     const id = req.params;
 
@@ -59,7 +55,7 @@ exports.put = async (req, res, next) => {
   }
 };
 
-exports.delete = async (req, res, next) => {
+export const deleteProduct = async (req, res, next) => {
   try {
     const { id } = req.params;
 

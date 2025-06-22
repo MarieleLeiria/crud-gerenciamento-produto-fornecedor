@@ -2,6 +2,7 @@
   "name": "project-node",
   "version": "1.0.0",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "start": "node ./bin/server.js"
   },
@@ -14,16 +15,14 @@
   },
   "description": "",
   "dependencies": {
-    
     "@emailjs/nodejs": "^5.0.2",
     "@prisma/client": "^6.8.2",
-    
-    
     "body-parser": "^2.2.0",
     "debug": "^4.4.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10",

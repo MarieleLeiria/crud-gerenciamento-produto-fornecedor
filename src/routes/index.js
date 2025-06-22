@@ -1,9 +1,8 @@
-"use strict";
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const express = require("express");
+import express from "express";
 const router = express.Router();
 
 // router.get("/:id", async (req, res, next) => {
@@ -26,4 +25,4 @@ router.get("/providers", async (req, res, next) => {
   res.status(200).json(allProviders);
 });
 
-module.exports = router;
+export default router;

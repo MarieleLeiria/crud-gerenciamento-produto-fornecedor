@@ -1,9 +1,8 @@
-"use strict";
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-exports.post = async (req, res, next) => {
+export const postProvider = async (req, res, next) => {
   const newProvider = await prisma.provider.create({
     data: {
       name: req.body.name,
@@ -18,7 +17,7 @@ exports.post = async (req, res, next) => {
   // });
 };
 
-exports.put = async (req, res, next) => {
+export const putProvider = async (req, res, next) => {
   try {
     const id = req.params;
 
@@ -39,7 +38,7 @@ exports.put = async (req, res, next) => {
   }
 };
 
-exports.delete = async (req, res, next) => {
+export const deleteProvider = async (req, res, next) => {
   try {
     const { id } = req.params;
 

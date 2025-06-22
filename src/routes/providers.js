@@ -1,11 +1,13 @@
-"use strict";
-
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const controller = require("../controllers/provider-controller");
+import {
+  deleteProvider,
+  postProvider,
+  putProvider,
+} from "../controllers/provider-controller.js";
 
-router.post("/", controller.post);
-router.put("/:id", controller.put);
-router.delete("/:id", controller.delete);
+router.post("/", postProvider);
+router.put("/:id", putProvider);
+router.delete("/:id", deleteProvider);
 
-module.exports = router;
+export default router;

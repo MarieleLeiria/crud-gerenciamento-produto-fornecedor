@@ -1,12 +1,13 @@
-"use strict";
-
-const express = require("express");
+import express from "express";
+import {
+  postProduct,
+  putProduct,
+  deleteProduct,
+} from "../controllers/product-controller.js";
 const router = express.Router();
-const controller = require("../controllers/product-controller");
 
-router.post("/", controller.post);
+router.post("/", postProduct);
+router.put("/:id", putProduct);
+router.delete("/:id", deleteProduct);
 
-router.put("/:id", controller.put);
-router.delete("/:id", controller.delete);
-
-module.exports = router;
+export default router;
